@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "1c91",
-      "type": "Part-Time",
-      "title": "Piper Perez",
-      "description": "Facere dolor occaeca",
-      "salary": "$80K - $90K",
-      "location": "Quia provident Nam ",
-      "company": {
-        "name": "Branch Flynn LLC",
-        "description": "Consequatur nisi eni",
-        "contactEmail": "dezy@mailinator.com",
-        "contactPhone": "+1 (159) 972-3325"
-      }
     }
   ]
 }
