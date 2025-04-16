@@ -10,6 +10,8 @@ const route = useRoute()
 const toast = useToast()
 const router = useRouter()
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api'
+
 const jobId = route.params.id
 
 const state = reactive({
@@ -22,7 +24,7 @@ const deleteJob = async () => {
     const confirm = window.confirm('Are you sure you want to delete this job?')
     if (!confirm) return
 
-    await axios.delete(`/api/jobs/${jobId}`)
+    await axios.delete(`${apiBaseUrl}/jobs/${jobId}`)
     toast.success('Job deleted successfully!')
     router.push('/jobs')
   } catch (error) {
@@ -33,7 +35,7 @@ const deleteJob = async () => {
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`/api/jobs/${jobId}`)
+    const response = await axios.get(`${apiBaseUrl}/jobs/${jobId}`)
     state.job = response.data
   } catch (error) {
     console.error('Error fetching job:', error)

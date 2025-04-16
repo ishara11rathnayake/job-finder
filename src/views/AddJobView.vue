@@ -20,6 +20,7 @@ const form = reactive({
 
 const router = useRouter()
 const toast = useToast()
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api'
 
 const handleSubmit = async () => {
   try {
@@ -30,7 +31,7 @@ const handleSubmit = async () => {
       },
     }
 
-    const response = await axios.post('/api/jobs', newJob)
+    const response = await axios.post(`${apiBaseUrl}/jobs`, newJob)
     toast.success('Job added successfully!')
     router.push(`/jobs/${response.data.id}`)
   } catch (error) {
